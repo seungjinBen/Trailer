@@ -46,26 +46,24 @@
     동작 최소화(prefers-reduced-motion)를 켠 사용자에게는 정지 상태로 보입니다.
   -->
   <style>
-    .rt-flow { animation: rt-flow 1.25s linear infinite; }
-    @keyframes rt-flow { to { stroke-dashoffset: -36; } }
-
-    .rt-dot { animation: rt-run 3.4s cubic-bezier(.45,.02,.35,1) infinite; }
+    /* 출발역에서 도착역까지 선로를 달리는 열차 */
+    .rt-train { animation: rt-run 4.2s cubic-bezier(.5,.02,.4,1) infinite; }
     @keyframes rt-run {
-      0%        { transform: translateY(0);     opacity: 0; }
-      8%        { opacity: 1; }
-      82%       { transform: translateY(444px); opacity: 1; }
-      94%, 100% { transform: translateY(444px); opacity: 0; }
+      0%        { transform: translateY(0);     opacity: 1; }
+      86%       { transform: translateY(268px); opacity: 1; }
+      96%       { transform: translateY(268px); opacity: 0; }
+      97%, 100% { transform: translateY(0);     opacity: 0; }
     }
 
-    .rt-pulse { transform-box: fill-box; transform-origin: center; animation: rt-pulse 3.4s ease-out infinite; }
+    .rt-pulse { transform-box: fill-box; transform-origin: center; animation: rt-pulse 4.2s ease-out infinite; }
     @keyframes rt-pulse {
-      0%, 74%  { transform: scale(1);   opacity: 0; }
-      86%      { transform: scale(1.9); opacity: .75; }
+      0%, 78%  { transform: scale(1);   opacity: 0; }
+      88%      { transform: scale(1.9); opacity: .75; }
       100%     { transform: scale(2.6); opacity: 0; }
     }
 
     /* 좋아요 하트가 살짝 뛰는 효과 */
-    .rt-heart { transform-box: fill-box; transform-origin: center; animation: rt-beat 3.4s ease-in-out infinite; }
+    .rt-heart { transform-box: fill-box; transform-origin: center; animation: rt-beat 4.2s ease-in-out infinite; }
     @keyframes rt-beat {
       0%, 60%, 100% { transform: scale(1); }
       68%           { transform: scale(1.18); }
@@ -77,8 +75,9 @@
     .mp-shield{ font-family: Pretendard, 'Malgun Gothic', sans-serif; font-size: 10px; font-weight: 700; fill: #ffffff; }
 
     @media (prefers-reduced-motion: reduce) {
-      .rt-flow, .rt-dot, .rt-pulse, .rt-heart { animation: none; }
-      .rt-dot, .rt-pulse { opacity: 0; }
+      /* 열차는 출발역에 멈춘 상태로 그대로 보여줍니다 */
+      .rt-train, .rt-pulse, .rt-heart { animation: none; }
+      .rt-pulse { opacity: 0; }
     }
   </style>
 
@@ -151,23 +150,46 @@
     </g>
 
     <!-- ============ 여행 경로 (기찻길) ============ -->
-    <path d="M270 500 V944" stroke="#A83A66" stroke-width="11" opacity=".55"/>
-    <path d="M270 500 V944" stroke="#D9528A" stroke-width="7"/>
-    <path d="M270 500 V944" stroke="#F7B7D2" stroke-width="2.6"/>
-    <path class="rt-flow" d="M270 500 V944" stroke="#ffffff" stroke-width="7"
-          stroke-dasharray="9 27" stroke-linecap="round" opacity=".8"/>
+    <!-- 노반 -->
+    <path d="M270 500 V944" stroke="#8E2E52" stroke-width="15" opacity=".45"/>
+    <!-- 본선 -->
+    <path d="M270 500 V944" stroke="#D9528A" stroke-width="11"/>
+    <!-- 침목 -->
+    <path d="M270 500 V944" stroke="#ffffff" stroke-width="11" stroke-dasharray="3 10" opacity=".72"/>
+    <!-- 레일 두 줄 -->
+    <path d="M265.4 500 V944" stroke="#FBE2ED" stroke-width="1.9" opacity=".95"/>
+    <path d="M274.6 500 V944" stroke="#FBE2ED" stroke-width="1.9" opacity=".95"/>
 
     <!-- 지점 3 (출발) -->
     <path d="M270 468 c-14 0-25 11-25 24 c0 17 25 36 25 36 s25-19 25-36 c0-13-11-24-25-24z" fill="#2C3140" filter="url(#v-shadow)"/>
     <circle cx="270" cy="492" r="7.5" fill="#F4F1E8"/>
     <text x="270" y="550" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="13" font-weight="700" fill="#3F4658">지점 3</text>
 
-    <!-- 선로를 달리는 빛 -->
-    <g class="rt-dot">
-      <rect x="263" y="424" width="14" height="76" rx="7" fill="url(#v-trail)"/>
-      <circle cx="270" cy="500" r="21" fill="#ffffff" opacity=".26"/>
-      <circle cx="270" cy="500" r="12" fill="#FFD6E6" opacity=".9"/>
-      <circle cx="270" cy="500" r="6.5" fill="#ffffff"/>
+    <!-- 선로를 달리는 열차 (위에서 본 모습, 아래쪽이 진행 방향) -->
+    <!-- 바깥 g 는 출발 위치 보정용 — 안쪽 g 의 CSS transform 과 충돌하지 않게 분리 -->
+    <g transform="translate(0,26)">
+    <g class="rt-train">
+      <!-- 지나온 자리에 남는 잔광 -->
+      <rect x="262" y="466" width="16" height="70" rx="8" fill="url(#v-trail)"/>
+      <!-- 그림자 -->
+      <ellipse cx="273" cy="594" rx="26" ry="58" fill="#0B0F16" opacity=".2"/>
+      <!-- 차체 -->
+      <path d="M258 536 h24 a11 11 0 0 1 11 11 v68 q0 20 -23 33 q-23 -13 -23 -33 v-68 a11 11 0 0 1 11 -11 z" fill="#F5F7FB"/>
+      <!-- 측면 띠 -->
+      <path d="M247 558 v57 q0 9 5 16 v-73 z" fill="#3F6BD8"/>
+      <path d="M293 558 v57 q0 9 -5 16 v-73 z" fill="#3F6BD8"/>
+      <!-- 지붕 · 객실 유리 -->
+      <rect x="254" y="548" width="32" height="14" rx="5" fill="#39456B"/>
+      <rect x="254" y="568" width="32" height="11" rx="4" fill="#5A6588"/>
+      <rect x="254" y="585" width="32" height="11" rx="4" fill="#8A94AE" opacity=".6"/>
+      <!-- 전면 유리 -->
+      <path d="M254 602 q16 -6 32 0 q0 20 -16 33 q-16 -13 -16 -33 z" fill="#2E3A57"/>
+      <!-- 전조등 -->
+      <circle cx="261" cy="628" r="4" fill="#FFF3C4"/>
+      <circle cx="279" cy="628" r="4" fill="#FFF3C4"/>
+      <!-- 진행 방향 불빛 -->
+      <path d="M270 640 l-21 44 h42 z" fill="#FFF3C4" opacity=".26"/>
+    </g>
     </g>
 
     <!-- 지점 2 (도착) -->
