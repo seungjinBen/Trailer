@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 장소 상세 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 장소 소개 문구 / 사진 / 주소 / 가장 가까운 역에서의 도보 시간 / 설명 / 가까운 맛집 카드
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 HTML 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 장소 상세 화면 — 주소, 역에서의 도보 시간, 가까운 맛집 정보">
+  <defs>
+    <linearGradient id="d-hanok" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#6E7A6A"/><stop offset=".42" stop-color="#8A6A4C"/><stop offset="1" stop-color="#5E4632"/>
+    </linearGradient>
+    <linearGradient id="d-glass" x1="0" y1="0" x2=".5" y2="1">
+      <stop offset="0" stop-color="#8CC0E6"/><stop offset=".55" stop-color="#CBD9E2"/><stop offset="1" stop-color="#9FAFA2"/>
+    </linearGradient>
+    <linearGradient id="d-f1" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#6B5642"/><stop offset="1" stop-color="#3E3226"/>
+    </linearGradient>
+    <linearGradient id="d-f2" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#E0B23C"/><stop offset="1" stop-color="#B4602C"/>
+    </linearGradient>
+    <linearGradient id="d-f3" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#3F5D4E"/><stop offset="1" stop-color="#22362E"/>
+    </linearGradient>
+    <clipPath id="d-p1"><rect x="32" y="182" width="386" height="248" rx="14"/></clipPath>
+    <clipPath id="d-p2"><rect x="432" y="182" width="108" height="248" rx="14"/></clipPath>
+    <clipPath id="d-food"><rect x="0" y="782" width="540" height="388"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 닫기 ===== -->
+  <circle cx="46" cy="58" r="17" fill="#E9ECF1"/>
+  <g transform="translate(46,58)" stroke="#6B7280" stroke-width="2.2" stroke-linecap="round">
+    <path d="M-5 -5 L5 5 M5 -5 L-5 5"/>
+  </g>
+
+  <!-- ===== 타이틀 ===== -->
+  <text x="32" y="116" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="600" fill="#3C4352">시간이 머무는 감성 골목,</text>
+  <text x="32" y="152" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="24" font-weight="800" fill="#21262F">대전 소제동 카페거리</text>
+
+  <!-- ===== 사진 ===== -->
+  <rect x="32" y="182" width="386" height="248" rx="14" fill="url(#d-hanok)"/>
+  <g clip-path="url(#d-p1)">
+    <path d="M32 182 h386 v58 l-386 0z" fill="#4C5A50"/>
+    <path d="M46 240 h358 v190 h-358z" fill="#7B5E42"/>
+    <rect x="70" y="268" width="96" height="132" rx="6" fill="#3E3226"/>
+    <circle cx="212" cy="300" r="30" fill="#2F3A34"/>
+    <circle cx="212" cy="300" r="21" fill="#9FB4A6"/>
+    <rect x="264" y="286" width="84" height="114" rx="6" fill="#54422F"/>
+    <path d="M300 406 h68 v24 h-68z" fill="#2B2219"/>
+  </g>
+  <rect x="432" y="182" width="108" height="248" rx="14" fill="url(#d-glass)"/>
+  <g clip-path="url(#d-p2)">
+    <rect x="432" y="182" width="108" height="96" fill="#8CC0E6"/>
+    <ellipse cx="470" cy="212" rx="30" ry="10" fill="#ffffff" opacity=".65"/>
+    <rect x="446" y="278" width="94" height="120" rx="6" fill="#D5DFE4" opacity=".8"/>
+    <rect x="440" y="398" width="100" height="32" fill="#8E9B88"/>
+  </g>
+
+  <!-- ===== 주소 ===== -->
+  <g transform="translate(34,466)">
+    <path d="M10 0 a10 10 0 0 1 10 10 c0 8-10 18-10 18 s-10-10-10-18 a10 10 0 0 1 10-10z" fill="#5E84F4"/>
+    <circle cx="10" cy="10" r="3.8" fill="#ffffff"/>
+  </g>
+  <text x="70" y="490" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#3C4352">대전광역시 동구 수향길 53 (소제동)</text>
+
+  <!-- ===== 역에서 도보 ===== -->
+  <g transform="translate(36,518)" fill="none" stroke="#5E84F4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 4 L4 12 L14 20"/><path d="M4 12 h12 a8 8 0 0 1 8 8 v4"/>
+  </g>
+  <text x="70" y="538" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#21262F">대전역에서 도보 6~7분</text>
+
+  <!-- ===== 소개 ===== -->
+  <rect x="32" y="566" width="476" height="150" rx="14" fill="#F1F4FB"/>
+  <text x="56" y="606" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15.5" font-weight="500" fill="#4B5261">레트로한 분위기와 다양한 카페, 맛집이 어우러져 여유로운</text>
+  <text x="56" y="638" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15.5" font-weight="500" fill="#4B5261">산책과 휴식을 즐기기 좋습니다. 곳곳에 포토존과 문화공간</text>
+  <text x="56" y="670" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15.5" font-weight="500" fill="#4B5261">이 조성되어 볼거리와 즐길 거리가 풍부합니다.</text>
+
+  <!-- ===== 가까운 맛집 ===== -->
+  <text x="32" y="758" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">가까운 맛집</text>
+
+  <g clip-path="url(#d-food)">
+    <!-- 온천집 -->
+    <rect x="32" y="784" width="228" height="134" rx="14" fill="url(#d-f1)"/>
+    <rect x="56" y="852" width="180" height="10" rx="5" fill="#8E7458" opacity=".8"/>
+    <circle cx="96" cy="824" r="16" fill="#C9A87E" opacity=".7"/>
+    <circle cx="196" cy="818" r="12" fill="#C9A87E" opacity=".55"/>
+    <text x="32" y="948" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="800" fill="#21262F">온천집</text>
+    <text x="32" y="974" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="13.5" font-weight="500" fill="#8A91A0">샤브샤브 | 동구 수향길 17</text>
+
+    <!-- 홀스 타코 -->
+    <rect x="280" y="784" width="228" height="134" rx="14" fill="url(#d-f2)"/>
+    <rect x="298" y="800" width="192" height="44" rx="6" fill="#B0382C"/>
+    <text x="394" y="831" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#F5E4B6">TACO GANG</text>
+    <rect x="298" y="858" width="192" height="44" rx="6" fill="#7A4526" opacity=".7"/>
+    <text x="280" y="948" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="800" fill="#21262F">홀스 타코</text>
+    <text x="280" y="974" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="13.5" font-weight="500" fill="#8A91A0">타코 | 동구 소제동 299-617</text>
+
+    <!-- 치앙마이방콕 -->
+    <rect x="32" y="1000" width="228" height="134" rx="14" fill="url(#d-f3)"/>
+    <circle cx="80" cy="1036" r="16" fill="#F3E7C8" opacity=".9"/>
+    <circle cx="212" cy="1036" r="16" fill="#F3E7C8" opacity=".9"/>
+    <rect x="56" y="1082" width="180" height="12" rx="6" fill="#7C8F7A" opacity=".7"/>
+    <text x="32" y="1164" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="800" fill="#21262F">치앙마이방콕</text>
+
+    <rect x="280" y="1000" width="228" height="134" rx="14" fill="url(#d-f3)"/>
+    <circle cx="328" cy="1036" r="16" fill="#F3E7C8" opacity=".9"/>
+    <circle cx="460" cy="1036" r="16" fill="#F3E7C8" opacity=".9"/>
+    <rect x="304" y="1082" width="180" height="12" rx="6" fill="#7C8F7A" opacity=".7"/>
+    <text x="280" y="1164" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="800" fill="#21262F">치앙마이방콕</text>
+  </g>
+</svg>

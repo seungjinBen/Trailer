@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 여행 영상(릴스) 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 지도 위에 그려진 여행 경로(기찻길) + 달리는 애니메이션
+  - 우측 릴스 반응 레일(좋아요 · 댓글 · 공유 · 더보기)
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 HTML 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 여행 영상 화면 — 지도에 그려진 여행 경로와 좋아요·댓글·공유 반응">
+  <defs>
+    <linearGradient id="v-land" x1="0" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#E4DCCA"/>
+      <stop offset=".5" stop-color="#D6CBB4"/>
+      <stop offset="1" stop-color="#C3B79C"/>
+    </linearGradient>
+    <linearGradient id="v-sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#AFCBDE"/>
+      <stop offset="1" stop-color="#93B4CE"/>
+    </linearGradient>
+    <linearGradient id="v-veil" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0B0F16" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#0B0F16" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="v-veil-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B0F16" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#0B0F16" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="v-rail-scrim" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#0B0F16" stop-opacity=".38"/>
+      <stop offset=".62" stop-color="#0B0F16" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#0B0F16" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="v-trail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".7" stop-color="#FFD6E6" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".95"/>
+    </linearGradient>
+    <filter id="v-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#0B0F16" flood-opacity=".55"/>
+    </filter>
+    <clipPath id="v-clip"><rect width="540" height="1010"/></clipPath>
+  </defs>
+
+  <!--
+    경로가 "달리는" 느낌을 주는 애니메이션.
+    SVG 내부 CSS 는 <img> 로 불러와도 재생되며, 스크립트는 쓰지 않습니다.
+    동작 최소화(prefers-reduced-motion)를 켠 사용자에게는 정지 상태로 보입니다.
+  -->
+  <style>
+    .rt-flow { animation: rt-flow 1.25s linear infinite; }
+    @keyframes rt-flow { to { stroke-dashoffset: -36; } }
+
+    .rt-dot { animation: rt-run 3.4s cubic-bezier(.45,.02,.35,1) infinite; }
+    @keyframes rt-run {
+      0%        { transform: translateY(0);     opacity: 0; }
+      8%        { opacity: 1; }
+      82%       { transform: translateY(444px); opacity: 1; }
+      94%, 100% { transform: translateY(444px); opacity: 0; }
+    }
+
+    .rt-pulse { transform-box: fill-box; transform-origin: center; animation: rt-pulse 3.4s ease-out infinite; }
+    @keyframes rt-pulse {
+      0%, 74%  { transform: scale(1);   opacity: 0; }
+      86%      { transform: scale(1.9); opacity: .75; }
+      100%     { transform: scale(2.6); opacity: 0; }
+    }
+
+    /* 좋아요 하트가 살짝 뛰는 효과 */
+    .rt-heart { transform-box: fill-box; transform-origin: center; animation: rt-beat 3.4s ease-in-out infinite; }
+    @keyframes rt-beat {
+      0%, 60%, 100% { transform: scale(1); }
+      68%           { transform: scale(1.18); }
+      76%           { transform: scale(1); }
+    }
+
+    .mp-label { font-family: Pretendard, 'Malgun Gothic', sans-serif; font-size: 11px; fill: #6B6455; }
+    .mp-sea   { fill: #6E8DA6; }
+    .mp-shield{ font-family: Pretendard, 'Malgun Gothic', sans-serif; font-size: 10px; font-weight: 700; fill: #ffffff; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rt-flow, .rt-dot, .rt-pulse, .rt-heart { animation: none; }
+      .rt-dot, .rt-pulse { opacity: 0; }
+    }
+  </style>
+
+  <rect width="540" height="1170" fill="#0B0D12"/>
+
+  <!-- ===================== 지도 ===================== -->
+  <g clip-path="url(#v-clip)">
+    <rect width="540" height="1010" fill="url(#v-land)"/>
+
+    <!-- 해안선 · 바다 -->
+    <path d="M540 0 V1010 H352 q30 -118 4 -228 q-26 -104 20 -196 q40 -76 10 -166 q-20 -70 32 -134 q32 -42 72 -78 Z" fill="url(#v-sea)"/>
+    <path d="M352 1010 q30 -118 4 -228 q-26 -104 20 -196 q40 -76 10 -166 q-20 -70 32 -134 q32 -42 72 -78"
+          fill="none" stroke="#88A8C2" stroke-width="2"/>
+
+    <!-- 산지 음영 -->
+    <path d="M0 210 q66 -50 132 -14 q78 42 148 8 v130 H0 Z" fill="#C7BBA1" opacity=".7"/>
+    <path d="M0 330 q54 -34 106 -8 q64 32 122 4 v96 H0 Z" fill="#BDB097" opacity=".55"/>
+    <path d="M0 560 q60 -40 120 -10 q70 34 128 2 v104 H0 Z" fill="#C7BBA1" opacity=".5"/>
+    <path d="M0 820 q56 -30 110 -4 q64 30 118 4 v120 H0 Z" fill="#BDB097" opacity=".45"/>
+
+    <!-- 도로망 -->
+    <path d="M76 1010 q20 -230 92 -394 q54 -118 42 -252 q-8 -104 42 -186" fill="none" stroke="#F2EDE2" stroke-width="6" opacity=".85"/>
+    <path d="M0 470 q136 -30 262 8 q92 28 178 -12" fill="none" stroke="#F2EDE2" stroke-width="4" opacity=".7"/>
+    <path d="M0 742 q120 -22 234 10 q86 24 172 -8" fill="none" stroke="#F2EDE2" stroke-width="4" opacity=".7"/>
+    <path d="M118 0 q-14 150 40 268 q46 100 24 210" fill="none" stroke="#E3D9C6" stroke-width="3" opacity=".8"/>
+    <path d="M298 1010 q22 -160 -12 -300" fill="none" stroke="#E3D9C6" stroke-width="3" opacity=".7"/>
+
+    <!-- 관심 지점 -->
+    <g fill="#E0737F" opacity=".55">
+      <circle cx="180" cy="120" r="4.5"/><circle cx="286" cy="92" r="4.5"/><circle cx="470" cy="188" r="4.5"/>
+      <circle cx="72" cy="404" r="4.5"/><circle cx="336" cy="300" r="4.5"/><circle cx="506" cy="446" r="4.5"/>
+      <circle cx="128" cy="640" r="4.5"/><circle cx="424" cy="606" r="4.5"/><circle cx="44" cy="826" r="4.5"/>
+      <circle cx="372" cy="772" r="4.5"/><circle cx="500" cy="890" r="4.5"/><circle cx="202" cy="946" r="4.5"/>
+      <circle cx="242" cy="238" r="4.5"/><circle cx="96" cy="188" r="4.5"/><circle cx="318" cy="884" r="4.5"/>
+    </g>
+
+    <!-- 지명 -->
+    <g class="mp-label">
+      <text x="36" y="128">하귀리</text>
+      <text x="150" y="176">구엄리</text>
+      <text x="244" y="112">신엄리</text>
+      <text x="60" y="262">고성리</text>
+      <text x="188" y="288">상귀리</text>
+      <text x="286" y="222">애월</text>
+      <text x="40" y="392">유수암리</text>
+      <text x="196" y="430">소길리</text>
+      <text x="300" y="372">곽지리</text>
+      <text x="62" y="536">장전리</text>
+      <text x="212" y="576">금덕리</text>
+      <text x="304" y="520">한림</text>
+      <text x="34" y="688">저지리</text>
+      <text x="180" y="716">청수리</text>
+      <text x="296" y="666">협재</text>
+      <text x="58" y="860">신창리</text>
+      <text x="200" y="892">두모리</text>
+      <text x="292" y="820">금릉</text>
+      <text x="120" y="982">고산리</text>
+      <text x="286" y="962">용수리</text>
+    </g>
+    <g class="mp-sea" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="12" font-style="italic">
+      <text x="418" y="286">제주 서부 해상</text>
+    </g>
+
+    <!-- 도로 번호 -->
+    <g>
+      <rect x="146" y="330" width="26" height="18" rx="9" fill="#5D6FA8"/><text class="mp-shield" x="159" y="343" text-anchor="middle">12</text>
+      <rect x="82" y="606" width="26" height="18" rx="9" fill="#5D6FA8"/><text class="mp-shield" x="95" y="619" text-anchor="middle">16</text>
+      <rect x="238" y="792" width="26" height="18" rx="9" fill="#5D6FA8"/><text class="mp-shield" x="251" y="805" text-anchor="middle">12</text>
+      <rect x="326" y="444" width="30" height="18" rx="5" fill="#E8C34A"/><text class="mp-shield" x="341" y="457" text-anchor="middle" fill="#4A3B12">1132</text>
+    </g>
+
+    <!-- ============ 여행 경로 (기찻길) ============ -->
+    <path d="M270 500 V944" stroke="#A83A66" stroke-width="11" opacity=".55"/>
+    <path d="M270 500 V944" stroke="#D9528A" stroke-width="7"/>
+    <path d="M270 500 V944" stroke="#F7B7D2" stroke-width="2.6"/>
+    <path class="rt-flow" d="M270 500 V944" stroke="#ffffff" stroke-width="7"
+          stroke-dasharray="9 27" stroke-linecap="round" opacity=".8"/>
+
+    <!-- 지점 3 (출발) -->
+    <path d="M270 468 c-14 0-25 11-25 24 c0 17 25 36 25 36 s25-19 25-36 c0-13-11-24-25-24z" fill="#2C3140" filter="url(#v-shadow)"/>
+    <circle cx="270" cy="492" r="7.5" fill="#F4F1E8"/>
+    <text x="270" y="550" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="13" font-weight="700" fill="#3F4658">지점 3</text>
+
+    <!-- 선로를 달리는 빛 -->
+    <g class="rt-dot">
+      <rect x="263" y="424" width="14" height="76" rx="7" fill="url(#v-trail)"/>
+      <circle cx="270" cy="500" r="21" fill="#ffffff" opacity=".26"/>
+      <circle cx="270" cy="500" r="12" fill="#FFD6E6" opacity=".9"/>
+      <circle cx="270" cy="500" r="6.5" fill="#ffffff"/>
+    </g>
+
+    <!-- 지점 2 (도착) -->
+    <circle class="rt-pulse" cx="270" cy="944" r="15" fill="none" stroke="#E0A32C" stroke-width="3"/>
+    <circle cx="270" cy="944" r="15" fill="#E8AE33" stroke="#8A6212" stroke-width="3.4" filter="url(#v-shadow)"/>
+    <text x="270" y="988" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="13" font-weight="700" fill="#3F4658">지점 2</text>
+
+    <!-- 지도 출처 -->
+    <text x="532" y="1000" text-anchor="end" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="9" fill="#5E6B78" opacity=".75">© Mapbox © OpenStreetMap</text>
+
+    <!-- 가독성 오버레이 -->
+    <rect x="0" y="0" width="540" height="200" fill="url(#v-veil-top)"/>
+    <rect x="0" y="690" width="540" height="320" fill="url(#v-veil)"/>
+    <ellipse cx="498" cy="660" rx="120" ry="250" fill="url(#v-rail-scrim)"/>
+  </g>
+
+  <!-- ===================== 상단 ===================== -->
+  <g filter="url(#v-shadow)">
+    <text x="28" y="88" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#ffffff">트레일러</text>
+    <g transform="translate(414,64)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13 22V4"/><path d="M6 11l7-7 7 7"/><path d="M2 20v6h22v-6"/>
+    </g>
+    <g transform="translate(468,64)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round">
+      <circle cx="14" cy="15" r="13"/><path d="M14 9v12M8 15h12"/>
+    </g>
+  </g>
+
+  <!-- 여행영상 만들기 툴팁 -->
+  <path d="M482 108 l-11 16 h22 z" fill="#5E84F4"/>
+  <rect x="352" y="122" width="168" height="44" rx="22" fill="#5E84F4"/>
+  <text x="436" y="150" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#ffffff">여행영상 만들기</text>
+
+  <!-- ===================== 우측 반응 레일 ===================== -->
+  <g filter="url(#v-shadow)">
+    <!-- 좋아요 -->
+    <g class="rt-heart">
+      <path d="M498 534 c-11-15-31-13-31 6 c0 18 21 30 31 39 c10-9 31-21 31-39 c0-19-20-21-31-6z" fill="#F2445E"/>
+    </g>
+    <text x="498" y="608" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="700" fill="#ffffff">1</text>
+
+    <!-- 댓글 -->
+    <g transform="translate(498,656)" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linejoin="round">
+      <path d="M-24 -16 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-32 l-14 12 v-12 h-2 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6z"/>
+    </g>
+    <text x="498" y="726" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="700" fill="#ffffff">0</text>
+
+    <!-- 공유 -->
+    <g transform="translate(498,780)" fill="none" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="15" cy="-9" r="6.5"/><circle cx="-15" cy="4" r="6.5"/><circle cx="15" cy="17" r="6.5"/>
+      <path d="M-9 1 l18 -8M-9 8 l18 8"/>
+    </g>
+
+    <!-- 더보기 -->
+    <g fill="#ffffff" transform="translate(498,850)">
+      <circle cx="-14" cy="0" r="3.6"/><circle cx="0" cy="0" r="3.6"/><circle cx="14" cy="0" r="3.6"/>
+    </g>
+  </g>
+
+  <!-- ===================== 작성자 · 여행 정보 ===================== -->
+  <circle cx="48" cy="842" r="24" fill="#8B929F"/>
+  <circle cx="48" cy="835" r="8.4" fill="#C9CED7"/>
+  <path d="M34 858 c3-9 8-11 14-11 s11 2 14 11z" fill="#C9CED7"/>
+  <text x="84" y="850" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="800" fill="#ffffff">johyeonwoo</text>
+  <text x="26" y="898" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="24" font-weight="700" fill="#ffffff">제주 오름 트레킹 2</text>
+  <g transform="translate(28,922)">
+    <path d="M8 0 a8 8 0 0 1 8 8 c0 6-8 15-8 15 s-8-9-8-15 a8 8 0 0 1 8-8z" fill="#ffffff"/>
+    <circle cx="8" cy="8" r="3" fill="#1B2030"/>
+  </g>
+  <text x="54" y="940" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="600" fill="#ffffff">제주</text>
+
+  <!-- ===================== 하단 탭바(다크) ===================== -->
+  <rect x="0" y="1010" width="540" height="160" fill="#0B0D12"/>
+  <g fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 1096 l12-11 12 11 v14 a2 2 0 0 1-2 2h-20a2 2 0 0 1-2-2z"/>
+    <rect x="258" y="1082" width="24" height="22" rx="4"/><path d="M265 1079v5M275 1079v5M258 1090h24"/>
+    <path d="M386 1090a8 8 0 0 0-16 0c0 9-4 12-4 12h24s-4-3-4-12"/><path d="M380 1106a3 3 0 0 1-4 0"/>
+    <circle cx="486" cy="1087" r="7"/><path d="M474 1107c2-7 6-9 12-9s10 2 12 9"/>
+  </g>
+  <!-- 활성 탭(여행 영상) -->
+  <rect x="140" y="1074" width="44" height="40" rx="12" fill="#ffffff"/>
+  <path d="M156 1084 l14 10 -14 10z" fill="#0B0D12"/>
+</svg>

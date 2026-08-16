@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 테마별 여행지 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 테마 헤더 / 다른 테마 새로고침 / 테마 대표 이미지 / 여행지 목록(썸네일 + 지역)
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 HTML 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 테마별 여행지 화면 — 테마에 맞는 여행지 목록">
+  <defs>
+    <linearGradient id="t-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7FB4DE"/>
+      <stop offset="1" stop-color="#C8DCEA"/>
+    </linearGradient>
+    <linearGradient id="t-field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FAE5C"/>
+      <stop offset="1" stop-color="#6E9247"/>
+    </linearGradient>
+    <linearGradient id="t-veil" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0E1710" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#0E1710" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="t-th1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#96C0E2"/><stop offset=".52" stop-color="#7E9E63"/><stop offset="1" stop-color="#5F8347"/>
+    </linearGradient>
+    <linearGradient id="t-th2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A9CDE6"/><stop offset=".46" stop-color="#7FA75E"/><stop offset="1" stop-color="#4F7A46"/>
+    </linearGradient>
+    <linearGradient id="t-th3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BBD6E8"/><stop offset=".5" stop-color="#6E9A52"/><stop offset="1" stop-color="#3F6B3C"/>
+    </linearGradient>
+    <clipPath id="t-hero"><rect x="0" y="104" width="540" height="392"/></clipPath>
+    <clipPath id="t-c1"><rect x="32" y="530" width="96" height="96" rx="20"/></clipPath>
+    <clipPath id="t-c2"><rect x="32" y="668" width="96" height="96" rx="20"/></clipPath>
+    <clipPath id="t-c3"><rect x="32" y="806" width="96" height="96" rx="20"/></clipPath>
+    <clipPath id="t-c4"><rect x="32" y="944" width="96" height="96" rx="20"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 헤더 ===== -->
+  <text x="28" y="72" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#21262F">테마별 여행지</text>
+  <g transform="translate(392,50)" fill="none" stroke="#5E84F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 8 a10 10 0 1 0 2 8"/><path d="M20 1v7h-7"/>
+  </g>
+  <text x="430" y="72" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#5E84F4">다른 테마</text>
+
+  <!-- ===== 테마 대표 이미지 ===== -->
+  <rect x="0" y="104" width="540" height="392" fill="url(#t-sky)"/>
+  <g clip-path="url(#t-hero)">
+    <ellipse cx="126" cy="176" rx="66" ry="22" fill="#ffffff" opacity=".6"/>
+    <ellipse cx="188" cy="164" rx="44" ry="17" fill="#ffffff" opacity=".5"/>
+    <ellipse cx="424" cy="152" rx="58" ry="19" fill="#ffffff" opacity=".55"/>
+    <!-- 오름 -->
+    <path d="M258 322 q66 -118 132 -6 q30 50 66 74 H196 q30 -28 62 -68z" fill="#5B6B49"/>
+    <path d="M258 322 q66 -118 132 -6 q30 50 66 74 H310 q-24 -40 -52 -68z" fill="#4C5C3E"/>
+    <path d="M0 350 q80 -34 158 -6 q66 24 120 6 v146 H0z" fill="#7E9B58"/>
+    <!-- 들판 -->
+    <rect x="0" y="392" width="540" height="104" fill="url(#t-field)"/>
+    <path d="M0 404 q140 -18 272 4 q136 22 268 -6" fill="none" stroke="#A9C47A" stroke-width="4" opacity=".7"/>
+    <rect x="0" y="104" width="540" height="392" fill="url(#t-veil)"/>
+  </g>
+  <text x="32" y="402" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="23" font-weight="800" fill="#ffffff">지금 당장 떠나요</text>
+  <text x="32" y="440" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="23" font-weight="800" fill="#ffffff">아름다운 숲과 자연의 도시</text>
+
+  <!-- ===== 여행지 목록 시트 ===== -->
+  <path d="M0 466 h540 V1170 H0 Z" fill="#ffffff" opacity="0"/>
+  <path d="M28 466 h484 a28 28 0 0 1 28 28 V1170 H0 V494 a28 28 0 0 1 28 -28z" fill="#ffffff"/>
+
+  <!-- 1. 궷물오름 -->
+  <rect x="32" y="530" width="96" height="96" rx="20" fill="url(#t-th1)"/>
+  <g clip-path="url(#t-c1)"><path d="M32 596 q26 -40 52 -6 q18 24 44 32 v4 H32z" fill="#4E6B41" opacity=".9"/></g>
+  <text x="152" y="568" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">궷물오름</text>
+  <rect x="152" y="584" width="216" height="36" rx="11" fill="#F1F3F7"/>
+  <text x="170" y="608" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#5B6270">제주특별자치도 제주시</text>
+
+  <!-- 2. 그레이스 정원 -->
+  <rect x="32" y="668" width="96" height="96" rx="20" fill="url(#t-th2)"/>
+  <g clip-path="url(#t-c2)">
+    <path d="M32 716 q24 -26 48 -4 q22 20 48 10 v42 H32z" fill="#3F6B3C" opacity=".85"/>
+    <circle cx="72" cy="716" r="10" fill="#9CC4E4" opacity=".7"/>
+  </g>
+  <text x="152" y="706" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">그레이스 정원</text>
+  <rect x="152" y="722" width="180" height="36" rx="11" fill="#F1F3F7"/>
+  <text x="170" y="746" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#5B6270">경상남도 고성군</text>
+
+  <!-- 3. 사려니숲길 -->
+  <rect x="32" y="806" width="96" height="96" rx="20" fill="url(#t-th3)"/>
+  <g clip-path="url(#t-c3)"><path d="M56 902 v-42 M84 902 v-56 M110 902 v-36" stroke="#2F5433" stroke-width="7" stroke-linecap="round"/></g>
+  <text x="152" y="844" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">사려니숲길</text>
+  <rect x="152" y="860" width="216" height="36" rx="11" fill="#F1F3F7"/>
+  <text x="170" y="884" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#5B6270">제주특별자치도 제주시</text>
+
+  <!-- 4. 화담숲 (스크롤 하단) -->
+  <rect x="32" y="944" width="96" height="96" rx="20" fill="url(#t-th2)"/>
+  <g clip-path="url(#t-c4)"><path d="M32 1006 q28 -30 56 -6 q20 18 40 8 v32 H32z" fill="#46703F" opacity=".85"/></g>
+  <text x="152" y="982" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">화담숲</text>
+  <rect x="152" y="998" width="168" height="36" rx="11" fill="#F1F3F7"/>
+  <text x="170" y="1022" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#5B6270">경기도 광주시</text>
+
+  <!-- ===== 하단 탭바 ===== -->
+  <rect x="0" y="1060" width="540" height="110" fill="#ffffff"/>
+  <path d="M0 1060h540" stroke="#EDF0F6" stroke-width="2"/>
+  <g fill="none" stroke="#A9B0BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 1108 l12-11 12 11 v14 a2 2 0 0 1-2 2h-20a2 2 0 0 1-2-2z" stroke="#5E84F4"/>
+    <rect x="150" y="1094" width="24" height="22" rx="5"/><path d="M158 1100l8 5-8 5z"/>
+    <rect x="258" y="1094" width="24" height="22" rx="4"/><path d="M265 1091v5M275 1091v5M258 1102h24"/>
+    <path d="M386 1102a8 8 0 0 0-16 0c0 9-4 12-4 12h24s-4-3-4-12"/><path d="M380 1118a3 3 0 0 1-4 0"/>
+    <circle cx="486" cy="1099" r="7"/><path d="M474 1119c2-7 6-9 12-9s10 2 12 9"/>
+  </g>
+</svg>

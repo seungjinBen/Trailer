@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 승차권 화면 목업 (실제 운영 화면 기준으로 재현)
+  - DAY 별 승차권 카드 / 출발·도착역과 시각 / 열차편 / 삭제하기
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 HTML 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 승차권 화면 — 날짜별로 등록된 열차 승차권 카드">
+  <defs>
+    <clipPath id="t-card1"><rect x="28" y="172" width="482" height="390" rx="6"/></clipPath>
+    <clipPath id="t-card2"><rect x="28" y="636" width="482" height="390" rx="6"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 헤더 ===== -->
+  <g transform="translate(28,64)" fill="none" stroke="#21262F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2 L2 14 L12 26"/>
+  </g>
+  <text x="60" y="92" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#21262F">승차권</text>
+  <g transform="translate(438,70)" stroke="#3D7BF7" stroke-width="2.6" stroke-linecap="round">
+    <path d="M11 2v18M2 11h18"/>
+  </g>
+  <text x="470" y="92" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="700" fill="#3D7BF7">추가</text>
+
+  <!-- ===== DAY 01 · 첫 번째 승차권 ===== -->
+  <circle cx="36" cy="146" r="7" fill="#4B7BF5"/>
+  <text x="54" y="153" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="800" fill="#21262F">DAY 01</text>
+  <text x="146" y="153" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#9AA1AF">08.16/일</text>
+
+  <rect x="28" y="172" width="482" height="390" rx="6" fill="#ffffff"/>
+  <g clip-path="url(#t-card1)">
+    <rect x="28" y="172" width="482" height="46" fill="#7FDCC4"/>
+    <rect x="28" y="218" width="482" height="276" fill="#ffffff"/>
+    <rect x="28" y="494" width="482" height="68" fill="#D6DAE0"/>
+  </g>
+  <text x="50" y="203" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="600" fill="#ffffff">2026년 08월 16일(일)</text>
+
+  <text x="152" y="300" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#21262F">서울</text>
+  <path d="M232 292 H302" stroke="#21262F" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M294 286 l8 6 -8 6" fill="none" stroke="#21262F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="386" y="300" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#21262F">수원</text>
+
+  <text x="152" y="360" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="26" font-weight="800" fill="#5B8DEF">09 : 08</text>
+  <text x="386" y="360" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="26" font-weight="800" fill="#5B8DEF">09 : 38</text>
+
+  <rect x="52" y="400" width="434" height="62" rx="3" fill="#EEF1F7"/>
+  <text x="76" y="438" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="500" fill="#3C4352">ITX-새마을 1111</text>
+
+  <text x="270" y="535" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="500" fill="#4B5261">삭제하기</text>
+
+  <!-- ===== DAY 01 · 두 번째 승차권 ===== -->
+  <circle cx="36" cy="610" r="7" fill="#4B7BF5"/>
+  <text x="54" y="617" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="800" fill="#21262F">DAY 01</text>
+  <text x="146" y="617" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#9AA1AF">08.16/일</text>
+
+  <rect x="28" y="636" width="482" height="390" rx="6" fill="#ffffff"/>
+  <g clip-path="url(#t-card2)">
+    <rect x="28" y="636" width="482" height="46" fill="#7FDCC4"/>
+    <rect x="28" y="682" width="482" height="276" fill="#ffffff"/>
+    <rect x="28" y="958" width="482" height="68" fill="#D6DAE0"/>
+  </g>
+  <text x="50" y="667" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="600" fill="#ffffff">2026년 08월 16일(일)</text>
+
+  <text x="152" y="764" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#21262F">수원</text>
+  <path d="M232 756 H302" stroke="#21262F" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M294 750 l8 6 -8 6" fill="none" stroke="#21262F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="386" y="764" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#21262F">대전</text>
+
+  <text x="152" y="824" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="26" font-weight="800" fill="#5B8DEF">13 : 10</text>
+  <text x="386" y="824" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="26" font-weight="800" fill="#5B8DEF">14 : 15</text>
+
+  <rect x="52" y="864" width="434" height="62" rx="3" fill="#EEF1F7"/>
+  <text x="76" y="902" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="500" fill="#3C4352">KTX 173</text>
+
+  <text x="270" y="999" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="500" fill="#4B5261">삭제하기</text>
+
+  <!-- ===== DAY 03 (스크롤 하단) ===== -->
+  <circle cx="36" cy="1074" r="7" fill="#4B7BF5"/>
+  <text x="54" y="1081" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="800" fill="#21262F">DAY 03</text>
+  <text x="146" y="1081" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#9AA1AF">08.18/화</text>
+  <rect x="28" y="1104" width="482" height="66" rx="6" fill="#ffffff"/>
+  <rect x="28" y="1104" width="482" height="46" fill="#7FDCC4"/>
+  <text x="50" y="1135" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="600" fill="#ffffff">2026년 08월 18일(화)</text>
+</svg>

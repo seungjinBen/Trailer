@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 여행 상세(타임라인) 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 대표사진 헤더 / KTX 티켓 정보 추가하기 / 기차 탑승 안내 / Day별 타임라인
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 index.html 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 여행 상세 화면 — 승차·하차와 방문 장소가 시간 순으로 정리된 타임라인">
+  <defs>
+    <linearGradient id="p-hero" x1="0" y1="0" x2=".7" y2="1">
+      <stop offset="0" stop-color="#8E96A6"/>
+      <stop offset=".5" stop-color="#6E7788"/>
+      <stop offset="1" stop-color="#4A5261"/>
+    </linearGradient>
+    <linearGradient id="p-shade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0C1018" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#0C1018" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="p-photo" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#AEB6C4"/>
+      <stop offset=".55" stop-color="#828C9E"/>
+      <stop offset="1" stop-color="#5B6474"/>
+    </linearGradient>
+    <clipPath id="p-hero-clip"><rect x="0" y="0" width="540" height="312"/></clipPath>
+    <clipPath id="p-photo-clip"><rect x="118" y="922" width="368" height="248" rx="12"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 대표사진 헤더 ===== -->
+  <rect x="0" y="0" width="540" height="312" fill="url(#p-hero)"/>
+  <g clip-path="url(#p-hero-clip)">
+    <!-- 실내 상가 느낌의 구조물 -->
+    <rect x="0" y="0" width="540" height="60" fill="#C6CCD6" opacity=".5"/>
+    <ellipse cx="128" cy="34" rx="30" ry="9" fill="#FFF4D6" opacity=".55"/>
+    <ellipse cx="304" cy="26" rx="26" ry="8" fill="#FFF4D6" opacity=".45"/>
+    <ellipse cx="452" cy="38" rx="28" ry="9" fill="#FFF4D6" opacity=".5"/>
+    <rect x="238" y="60" width="34" height="120" rx="6" fill="#4E9BD8" opacity=".55"/>
+    <rect x="286" y="70" width="26" height="86" rx="6" fill="#4FBF87" opacity=".5"/>
+    <rect x="0" y="196" width="540" height="6" fill="#E7EAF0" opacity=".55"/>
+    <path d="M60 312 L196 214 L316 214 L316 312 Z" fill="#DFE3EA" opacity=".35"/>
+    <rect x="404" y="150" width="136" height="162" fill="#5A6272" opacity=".45"/>
+    <rect x="0" y="0" width="540" height="312" fill="url(#p-shade)"/>
+  </g>
+
+  <g transform="translate(30,62)" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2 L2 15 L14 28"/>
+  </g>
+  <text x="30" y="156" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="30" font-weight="800" fill="#ffffff">대전 2박 3일 여행</text>
+  <text x="30" y="192" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#ffffff" opacity=".9">2026.08.16(일) ~ 2026.08.18(화)</text>
+
+  <!-- KTX 티켓 정보 추가하기 -->
+  <rect x="30" y="228" width="480" height="62" rx="16" fill="#ffffff"/>
+  <g transform="translate(58,248)">
+    <rect x="0" y="0" width="26" height="18" rx="4" fill="#5E84F4"/>
+    <path d="M13 1v16" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 2.4"/>
+    <circle cx="0" cy="9" r="3.4" fill="#ffffff"/>
+    <circle cx="26" cy="9" r="3.4" fill="#ffffff"/>
+  </g>
+  <text x="104" y="266" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="700" fill="#21262F">KTX 티켓 정보 추가하기</text>
+  <g transform="translate(462,249)" stroke="#5E84F4" stroke-width="2.4" stroke-linecap="round">
+    <path d="M8 0v16M0 8h16"/>
+  </g>
+
+  <!-- ===== 기차 탑승 안내 ===== -->
+  <text x="30" y="366" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="24" font-weight="800" fill="#21262F">기차 탑승</text>
+  <text x="30" y="404" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#8A91A0">열차 출발 시각이 되면 창밖으로 보이는 관광지를 알림 탭에서</text>
+  <text x="30" y="430" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#8A91A0">알려드려요.</text>
+
+  <!-- Day 1 -->
+  <rect x="30" y="470" width="98" height="40" rx="12" fill="#4B7BF5"/>
+  <text x="79" y="497" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Day 1</text>
+  <text x="144" y="499" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#21262F">8/16(일)</text>
+
+  <!-- ===== 타임라인 ===== -->
+  <path d="M52 556 V1170" stroke="#E4E7EE" stroke-width="2.4"/>
+
+  <!-- 1. 서울 승차 -->
+  <circle cx="52" cy="556" r="23" fill="#ffffff" stroke="#DCE0E8" stroke-width="2.4"/>
+  <text x="52" y="563" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="600" fill="#7B8394">1</text>
+  <rect x="94" y="530" width="416" height="164" rx="14" fill="#F3F5F8"/>
+  <text x="120" y="566" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#5B8DEF">서울 09:08 - 수원 09:38</text>
+  <g transform="translate(120,588)">
+    <text x="0" y="18" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-style="italic" font-weight="800" fill="#1C3B8B" letter-spacing="-0.5">KTX</text>
+    <path d="M2 27 q26 -6 52 -2" fill="none" stroke="#D8232A" stroke-width="3.2" stroke-linecap="round"/>
+  </g>
+  <text x="196" y="608" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#21262F">서울 승차</text>
+  <rect x="120" y="628" width="128" height="34" rx="10" fill="#DFF5E6"/>
+  <text x="184" y="651" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="700" fill="#1F7A4C">ITX-새마을</text>
+  <text x="264" y="651" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#8A91A0">수원행</text>
+  <g fill="#A9B0BE"><circle cx="484" cy="556" r="2.6"/><circle cx="484" cy="565" r="2.6"/><circle cx="484" cy="574" r="2.6"/></g>
+
+  <!-- 수원 하차 -->
+  <circle cx="52" cy="762" r="19" fill="#EDEFF3"/>
+  <rect x="94" y="712" width="416" height="100" rx="14" fill="#F3F5F8"/>
+  <text x="120" y="748" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#5B8DEF">09:38</text>
+  <text x="120" y="784" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#21262F">수원 하차</text>
+  <g fill="#A9B0BE"><circle cx="484" cy="738" r="2.6"/><circle cx="484" cy="747" r="2.6"/><circle cx="484" cy="756" r="2.6"/></g>
+
+  <!-- 2. 타임빌라스 수원 -->
+  <circle cx="52" cy="878" r="23" fill="#ffffff" stroke="#7FD8C0" stroke-width="2.4"/>
+  <text x="52" y="885" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#2AA98A">2</text>
+  <rect x="94" y="852" width="416" height="318" rx="14" fill="#F3F5F8"/>
+  <text x="120" y="888" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#5B8DEF">10:30</text>
+  <text x="120" y="924" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#21262F">타임빌라스 수원</text>
+  <g fill="#A9B0BE"><circle cx="484" cy="878" r="2.6"/><circle cx="484" cy="887" r="2.6"/><circle cx="484" cy="896" r="2.6"/></g>
+  <rect x="118" y="946" width="368" height="224" rx="12" fill="url(#p-photo)"/>
+  <g clip-path="url(#p-photo-clip)">
+    <rect x="118" y="946" width="368" height="34" fill="#D5DAE3" opacity=".5"/>
+    <ellipse cx="204" cy="968" rx="26" ry="8" fill="#FFF4D6" opacity=".5"/>
+    <ellipse cx="368" cy="964" rx="24" ry="8" fill="#FFF4D6" opacity=".45"/>
+    <rect x="272" y="982" width="26" height="86" rx="5" fill="#4E9BD8" opacity=".5"/>
+    <rect x="312" y="990" width="20" height="62" rx="5" fill="#4FBF87" opacity=".45"/>
+    <path d="M150 1170 L246 1084 L336 1084 L336 1170 Z" fill="#E3E7EE" opacity=".3"/>
+    <rect x="398" y="1030" width="88" height="140" fill="#5A6272" opacity=".4"/>
+  </g>
+</svg>

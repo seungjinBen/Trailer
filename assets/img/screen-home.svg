@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 홈 화면 목업 (실제 운영 화면 기준으로 재현)
+  - AI 일정 만들기 툴팁 / AI 일정추천 배너 / 내일로 패스 / 여행 카드 / 여행중 플로팅 카드 / 하단 탭
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 index.html 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 홈 화면 — AI 일정 추천 배너와 진행 중인 여행 카드">
+  <defs>
+    <linearGradient id="h-banner" x1="0" y1="0" x2="1" y2=".35">
+      <stop offset="0" stop-color="#0A0D14"/>
+      <stop offset=".38" stop-color="#1E1A46"/>
+      <stop offset=".74" stop-color="#5A4FC0"/>
+      <stop offset="1" stop-color="#9089EE"/>
+    </linearGradient>
+    <linearGradient id="h-trip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5E84F4"/>
+      <stop offset="1" stop-color="#87A9FA"/>
+    </linearGradient>
+    <linearGradient id="h-card-a" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#98A2B3"/>
+      <stop offset="1" stop-color="#5F6A7D"/>
+    </linearGradient>
+    <linearGradient id="h-card-b" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#B7B764"/>
+      <stop offset=".55" stop-color="#7E8F52"/>
+      <stop offset="1" stop-color="#4E6647"/>
+    </linearGradient>
+    <linearGradient id="h-card-c" x1="0" y1="0" x2=".5" y2="1">
+      <stop offset="0" stop-color="#E4EDDD"/>
+      <stop offset="1" stop-color="#BFD6C4"/>
+    </linearGradient>
+    <linearGradient id="h-thumb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2C98A"/>
+      <stop offset="1" stop-color="#C98A52"/>
+    </linearGradient>
+    <clipPath id="h-banner-clip"><rect x="0" y="118" width="540" height="312"/></clipPath>
+    <clipPath id="h-cards-clip"><rect x="0" y="580" width="540" height="260"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 헤더 ===== -->
+  <text x="28" y="97" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#21262F">트레일러</text>
+  <g transform="translate(406,71)" fill="none" stroke="#21262F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="1" y="4" width="25" height="22" rx="4"/>
+    <path d="M8 1.5v5M19 1.5v5M1 12h25"/>
+    <circle cx="9" cy="17.5" r="1.4" fill="#21262F" stroke="none"/>
+    <circle cx="18" cy="17.5" r="1.4" fill="#21262F" stroke="none"/>
+    <circle cx="9" cy="22" r="1.4" fill="#21262F" stroke="none"/>
+    <circle cx="18" cy="22" r="1.4" fill="#21262F" stroke="none"/>
+  </g>
+  <g transform="translate(468,71)" fill="none" stroke="#21262F" stroke-width="1.9" stroke-linecap="round">
+    <circle cx="14" cy="15" r="13"/><path d="M14 9v12M8 15h12"/>
+  </g>
+
+  <!-- ===== AI 일정추천 배너 ===== -->
+  <rect x="0" y="118" width="540" height="312" fill="url(#h-banner)"/>
+  <g clip-path="url(#h-banner-clip)">
+    <!-- 천장 조명 -->
+    <ellipse cx="352" cy="142" rx="30" ry="11" fill="#F7D97A" opacity=".5"/>
+    <ellipse cx="452" cy="160" rx="26" ry="10" fill="#F7D97A" opacity=".42"/>
+    <ellipse cx="518" cy="140" rx="24" ry="9" fill="#F7D97A" opacity=".35"/>
+    <!-- 열차 일러스트 -->
+    <g transform="translate(296,182)">
+      <rect x="-30" y="196" width="320" height="7" fill="#F2C24B" opacity=".95"/>
+      <rect x="-30" y="187" width="320" height="7" fill="#7C87A6" opacity=".45"/>
+      <path d="M18 62 C18 27 45 6 86 4 L272 4 L272 187 L18 187 Z" fill="#E9EEF9"/>
+      <path d="M18 62 C18 27 45 6 86 4 L118 4 L118 187 L18 187 Z" fill="#F8FAFF"/>
+      <path d="M40 64 C40 41 57 27 86 25 L110 25 L110 76 L40 76 Z" fill="#33406E"/>
+      <rect x="132" y="27" width="48" height="52" rx="11" fill="#33406E"/>
+      <rect x="196" y="27" width="48" height="52" rx="11" fill="#33406E"/>
+      <rect x="18" y="118" width="254" height="15" fill="#5E84F4"/>
+      <rect x="18" y="150" width="254" height="37" fill="#28304A"/>
+      <circle cx="76" cy="187" r="15" fill="#171D2E"/>
+      <circle cx="216" cy="187" r="15" fill="#171D2E"/>
+    </g>
+  </g>
+
+  <!-- AI 일정 만들기 툴팁 -->
+  <path d="M420 116 l-11 16 h22 z" fill="#5E84F4"/>
+  <rect x="334" y="130" width="176" height="42" rx="21" fill="#5E84F4"/>
+  <text x="422" y="157" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#ffffff">AI 일정 만들기</text>
+
+  <text x="32" y="216" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#7FE8D2">AI 일정추천</text>
+  <text x="32" y="264" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#ffffff">취향만 고르면</text>
+  <text x="32" y="302" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#ffffff">일정은 AI가 짜드려요</text>
+
+  <rect x="440" y="388" width="72" height="34" rx="17" fill="#0A0D14" opacity=".45"/>
+  <text x="476" y="411" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="600" fill="#ffffff">1/3</text>
+
+  <!-- ===== 내일로 패스 바 ===== -->
+  <rect x="0" y="430" width="540" height="46" fill="#F1F3F7"/>
+  <g transform="translate(180,443)">
+    <rect x="0" y="2" width="26" height="17" rx="4" fill="#F0912F"/>
+    <rect x="4" y="6" width="18" height="9" rx="2" fill="#FFD9A8"/>
+    <path d="M13 3v15" stroke="#F0912F" stroke-width="2" stroke-dasharray="3 2"/>
+  </g>
+  <text x="216" y="459" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="600" fill="#4B5261">내일로 패스 예약하기</text>
+  <path d="M370 447 l7 6 -7 6" fill="none" stroke="#7B8394" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ===== 인기 여행 ===== -->
+  <text x="28" y="524" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="700" fill="#5E84F4">어디로 떠나볼까요?</text>
+  <text x="28" y="566" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#21262F">지금 사람들이 떠나는 여행 보기</text>
+
+  <g clip-path="url(#h-cards-clip)">
+    <!-- 왼쪽 카드(살짝 보임) -->
+    <rect x="-122" y="592" width="248" height="236" rx="22" fill="url(#h-card-a)"/>
+    <path d="M-122 700 q60 -26 120 4 t128 -10 v134 h-248 z" fill="#4C5666" opacity=".55"/>
+    <!-- 가운데 카드 · 부산 -->
+    <rect x="146" y="592" width="248" height="236" rx="22" fill="url(#h-card-b)"/>
+    <path d="M146 726 q64 -46 128 -12 q62 32 120 2 v112 h-248 z" fill="#3F5D5A" opacity=".8"/>
+    <path d="M146 700 q70 -34 132 0 q58 30 116 6" fill="none" stroke="#EDE9C8" stroke-width="4" opacity=".75"/>
+    <circle cx="286" cy="768" r="7" fill="#2C3F45"/>
+    <rect x="168" y="612" width="82" height="32" rx="16" fill="#111826" opacity=".5"/>
+    <path d="M182 621 a5.4 5.4 0 1 1 10.8 0 c0 4-5.4 9.6-5.4 9.6 S182 625 182 621z" fill="#ffffff"/>
+    <circle cx="187.4" cy="621" r="2" fill="#111826"/>
+    <text x="200" y="634" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="600" fill="#ffffff">부산</text>
+    <!-- 오른쪽 카드 · 서울 -->
+    <rect x="414" y="592" width="248" height="236" rx="22" fill="url(#h-card-c)"/>
+    <path d="M414 742 q56 -30 112 -6 q60 26 118 0 v98 h-230 z" fill="#93C6E0" opacity=".8"/>
+    <path d="M436 592 v236 M414 676 h248" stroke="#ffffff" stroke-width="5" opacity=".65"/>
+    <rect x="436" y="612" width="82" height="32" rx="16" fill="#111826" opacity=".5"/>
+    <path d="M450 621 a5.4 5.4 0 1 1 10.8 0 c0 4-5.4 9.6-5.4 9.6 S450 625 450 621z" fill="#ffffff"/>
+    <circle cx="455.4" cy="621" r="2" fill="#111826"/>
+    <text x="468" y="634" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="600" fill="#ffffff">서울</text>
+  </g>
+
+  <!-- ===== 진행 중인 여행 플로팅 카드 ===== -->
+  <rect x="52" y="862" width="436" height="92" rx="20" fill="url(#h-trip)"/>
+  <rect x="74" y="879" width="58" height="58" rx="16" fill="url(#h-thumb)"/>
+  <circle cx="93" cy="899" r="9" fill="#FBEBD2" opacity=".9"/>
+  <circle cx="114" cy="912" r="12" fill="#A9612F" opacity=".85"/>
+  <circle cx="90" cy="920" r="7" fill="#7E4A26" opacity=".8"/>
+  <text x="150" y="903" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="700" fill="#ffffff">대전 2박 3일 여행</text>
+  <text x="150" y="930" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="500" fill="#ffffff" opacity=".9">여행중 | 08.16(일) ~ 08.18(화)</text>
+  <g transform="translate(426,893)" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="3" width="24" height="21" rx="4"/>
+    <path d="M7 0.5v5M17 0.5v5M0 11h24"/>
+  </g>
+
+  <!-- ===== 구분 + 하단 탭바 ===== -->
+  <rect x="0" y="1004" width="540" height="10" fill="#F4F6FA"/>
+  <rect x="0" y="1060" width="540" height="110" fill="#ffffff"/>
+  <path d="M0 1060h540" stroke="#EDF0F6" stroke-width="2"/>
+  <g fill="none" stroke="#A9B0BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 홈(활성) -->
+    <path d="M42 1108 l12-11 12 11 v14 a2 2 0 0 1-2 2h-20a2 2 0 0 1-2-2z" stroke="#5E84F4"/>
+    <!-- 영상 -->
+    <rect x="150" y="1094" width="24" height="22" rx="5"/><path d="M158 1100l8 5-8 5z"/>
+    <!-- 일정 -->
+    <rect x="258" y="1094" width="24" height="22" rx="4"/><path d="M265 1091v5M275 1091v5M258 1102h24"/>
+    <!-- 알림 -->
+    <path d="M386 1102a8 8 0 0 0-16 0c0 9-4 12-4 12h24s-4-3-4-12"/><path d="M380 1118a3 3 0 0 1-4 0"/>
+    <!-- 마이 -->
+    <circle cx="486" cy="1099" r="7"/><path d="M474 1119c2-7 6-9 12-9s10 2 12 9"/>
+  </g>
+</svg>

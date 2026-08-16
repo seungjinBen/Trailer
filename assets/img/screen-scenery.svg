@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 알림 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 창밖 풍경 알림(왼쪽/오른쪽 창밖 + 명소명 + 분류·고도) / 일정 알림(출발 10분 전 리마인드)
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 index.html 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 알림 화면 — 창밖 풍경 알림과 열차 출발 알림 목록">
+  <rect width="540" height="1170" fill="#F7F8FB"/>
+
+  <!-- ===== 헤더 ===== -->
+  <rect x="0" y="0" width="540" height="122" fill="#ffffff"/>
+  <text x="28" y="100" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="25" font-weight="800" fill="#21262F">알림</text>
+  <g transform="translate(474,72)" fill="none" stroke="#21262F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+  </g>
+
+  <text x="28" y="164" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="700" fill="#8A91A0">오늘</text>
+
+  <!-- ===== 일정 알림 ===== -->
+  <rect x="24" y="182" width="492" height="110" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <text x="48" y="220" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="800" fill="#21262F">일정알림</text>
+  <text x="492" y="220" text-anchor="end" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="500" fill="#9AA1AF">오후 1:00</text>
+  <text x="48" y="252" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#3C4352">10분 뒤 수원역에서 KTX 173 열차가</text>
+  <text x="48" y="277" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#3C4352">출발해요 · 13:10 출발</text>
+
+  <!-- ===== 창밖 풍경 알림 1 · 월봉산 ===== -->
+  <rect x="24" y="308" width="492" height="112" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <rect x="44" y="324" width="92" height="80" rx="16" fill="#F4F6F9"/>
+  <g transform="translate(90,352)" fill="none" stroke="#1FA37F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 -7 L-4 0 L6 7"/><path d="M-4 0 H10"/>
+  </g>
+  <text x="90" y="390" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="700" fill="#1FA37F">왼쪽 창밖</text>
+  <text x="158" y="362" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">월봉산</text>
+  <rect x="240" y="342" width="56" height="26" rx="8" fill="#E6ECFE"/>
+  <text x="268" y="360" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="12" font-weight="800" fill="#3D63D8">NEW</text>
+  <text x="158" y="393" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#8A91A0">peak · 622m</text>
+
+  <!-- ===== 창밖 풍경 알림 2 · 대청호 ===== -->
+  <rect x="24" y="436" width="492" height="112" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <rect x="44" y="452" width="92" height="80" rx="16" fill="#F4F6F9"/>
+  <g transform="translate(90,480)" fill="none" stroke="#1FA37F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-6 -7 L4 0 L-6 7"/><path d="M-10 0 H4"/>
+  </g>
+  <text x="90" y="518" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="700" fill="#1FA37F">오른쪽 창밖</text>
+  <text x="158" y="490" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">대청호</text>
+  <text x="158" y="521" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#8A91A0">lake · 대전 대덕구</text>
+
+  <!-- ===== 창밖 풍경 알림 3 · 계룡산 ===== -->
+  <rect x="24" y="564" width="492" height="112" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <rect x="44" y="580" width="92" height="80" rx="16" fill="#F4F6F9"/>
+  <g transform="translate(90,608)" fill="none" stroke="#1FA37F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 -7 L-4 0 L6 7"/><path d="M-4 0 H10"/>
+  </g>
+  <text x="90" y="646" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="700" fill="#1FA37F">왼쪽 창밖</text>
+  <text x="158" y="618" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">계룡산</text>
+  <text x="158" y="649" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#8A91A0">peak · 845m</text>
+
+  <!-- ===== 어제 ===== -->
+  <text x="28" y="734" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="700" fill="#8A91A0">어제</text>
+
+  <rect x="24" y="752" width="492" height="110" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <text x="48" y="790" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="800" fill="#21262F">일정알림</text>
+  <text x="492" y="790" text-anchor="end" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="14" font-weight="500" fill="#9AA1AF">오전 8:58</text>
+  <text x="48" y="822" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#3C4352">10분 뒤 서울역에서 ITX-새마을 열차가</text>
+  <text x="48" y="847" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#3C4352">출발해요 · 09:08 출발</text>
+
+  <rect x="24" y="878" width="492" height="88" rx="18" fill="#ffffff" stroke="#ECEFF5" stroke-width="1.6"/>
+  <rect x="44" y="898" width="48" height="48" rx="14" fill="#E6ECFE"/>
+  <g transform="translate(56,912)" fill="none" stroke="#3D63D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="1" width="24" height="20" rx="4"/><path d="M9 7l7 4-7 4z"/>
+  </g>
+  <text x="110" y="922" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#21262F">여행 영상이 완성됐어요</text>
+  <text x="110" y="946" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="15" font-weight="500" fill="#8A91A0">대전 2박 3일 여행 · 사진 24장</text>
+
+  <!-- ===== 하단 탭바 ===== -->
+  <rect x="0" y="1060" width="540" height="110" fill="#ffffff"/>
+  <path d="M0 1060h540" stroke="#EDF0F6" stroke-width="2"/>
+  <g fill="none" stroke="#A9B0BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 1108 l12-11 12 11 v14 a2 2 0 0 1-2 2h-20a2 2 0 0 1-2-2z"/>
+    <rect x="150" y="1094" width="24" height="22" rx="5"/><path d="M158 1100l8 5-8 5z"/>
+    <rect x="258" y="1094" width="24" height="22" rx="4"/><path d="M265 1091v5M275 1091v5M258 1102h24"/>
+    <path d="M386 1102a8 8 0 0 0-16 0c0 9-4 12-4 12h24s-4-3-4-12" stroke="#5E84F4"/>
+    <path d="M380 1118a3 3 0 0 1-4 0" stroke="#5E84F4"/>
+    <circle cx="486" cy="1099" r="7"/><path d="M474 1119c2-7 6-9 12-9s10 2 12 9"/>
+  </g>
+  <circle cx="386" cy="1092" r="4.6" fill="#F4623A"/>
+</svg>

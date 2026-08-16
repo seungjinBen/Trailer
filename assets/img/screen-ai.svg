@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  트레일러 AI 일정 추천 화면 목업 (실제 운영 화면 기준으로 재현)
+  - 플랜 A·B·C 캐러셀 / 추천 다시받기 / 날짜 선택 / 플랜 일정 요약 / 이 여행 담기
+  - 실제 스크린샷 PNG(1080x2340)로 교체할 경우 HTML 의 src 확장자만 바꾸면 됩니다.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 1170" width="540" height="1170" role="img" aria-label="트레일러 AI 일정 추천 화면 — 세 가지 플랜을 비교하고 여행에 담는 화면">
+  <defs>
+    <linearGradient id="a-hanok" x1="0" y1="0" x2=".4" y2="1">
+      <stop offset="0" stop-color="#B9BEC2"/>
+      <stop offset=".45" stop-color="#9AA0A2"/>
+      <stop offset="1" stop-color="#7C8280"/>
+    </linearGradient>
+    <linearGradient id="a-side1" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#8FC0DE"/><stop offset=".5" stop-color="#B3B9BC"/><stop offset="1" stop-color="#8C8F86"/>
+    </linearGradient>
+    <linearGradient id="a-side2" x1="0" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#F2D04A"/><stop offset="1" stop-color="#D8A62C"/>
+    </linearGradient>
+    <clipPath id="a-card"><rect x="108" y="250" width="324" height="320" rx="24"/></clipPath>
+    <clipPath id="a-l"><rect x="-60" y="262" width="124" height="296" rx="22"/></clipPath>
+    <clipPath id="a-r"><rect x="476" y="262" width="124" height="296" rx="22"/></clipPath>
+  </defs>
+
+  <rect width="540" height="1170" fill="#ffffff"/>
+
+  <!-- ===== 헤더 ===== -->
+  <g transform="translate(28,66)" fill="none" stroke="#21262F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2 L2 14 L12 26"/>
+  </g>
+  <text x="62" y="90" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="600" fill="#4B5261">홈으로</text>
+  <text x="270" y="90" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" font-weight="800" fill="#21262F">일정 추천</text>
+
+  <!-- ===== 타이틀 ===== -->
+  <text x="28" y="176" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="27" font-weight="800" fill="#21262F">3가지 플랜을 추천드려요</text>
+  <text x="28" y="214" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="500" fill="#9AA1AF">원하는 플랜을 선택하면 일정이 추가돼요.</text>
+
+  <!-- ===== 플랜 캐러셀 ===== -->
+  <!-- 왼쪽(플랜 A) 살짝 -->
+  <rect x="-60" y="262" width="124" height="296" rx="22" fill="url(#a-side1)"/>
+  <g clip-path="url(#a-l)">
+    <rect x="-60" y="262" width="124" height="96" fill="#8FC0DE"/>
+    <rect x="-60" y="358" width="124" height="130" fill="#AEB3B0"/>
+    <rect x="-40" y="386" width="42" height="70" rx="4" fill="#7E8580"/>
+    <rect x="14" y="380" width="46" height="76" rx="4" fill="#6F7671"/>
+    <rect x="-60" y="488" width="124" height="70" fill="#8A8F8C"/>
+  </g>
+
+  <!-- 오른쪽(플랜 C) 살짝 -->
+  <rect x="476" y="262" width="124" height="296" rx="22" fill="url(#a-side2)"/>
+  <g clip-path="url(#a-r)">
+    <rect x="476" y="262" width="124" height="150" fill="#2C74C4"/>
+    <rect x="476" y="412" width="124" height="146" fill="#EFC63C"/>
+    <circle cx="522" cy="330" r="22" fill="#F2E9C8" opacity=".75"/>
+    <rect x="556" y="300" width="44" height="60" rx="6" fill="#63A8E0" opacity=".8"/>
+  </g>
+  <rect x="500" y="278" width="100" height="38" rx="19" fill="#1F2430"/>
+  <text x="556" y="304" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="700" fill="#ffffff">플랜 C</text>
+  <text x="500" y="360" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="800" fill="#ffffff">대전…</text>
+
+  <!-- 가운데(플랜 B) -->
+  <rect x="108" y="250" width="324" height="320" rx="24" fill="url(#a-hanok)"/>
+  <g clip-path="url(#a-card)">
+    <!-- 하늘 · 전선 -->
+    <rect x="108" y="250" width="324" height="60" fill="#AEB6BA"/>
+    <path d="M108 268 L432 286 M108 292 L432 274" stroke="#7C848A" stroke-width="1.6" opacity=".7"/>
+    <!-- 한옥 벽 · 기와지붕 -->
+    <rect x="120" y="318" width="222" height="150" fill="#AAAFAE"/>
+    <path d="M106 322 L356 290 L356 314 L106 346 Z" fill="#585D5B"/>
+    <path d="M106 346 L356 314 L356 326 L106 358 Z" fill="#7A807D"/>
+    <rect x="342" y="330" width="102" height="138" fill="#989E9C"/>
+    <path d="M334 334 L450 312 L450 332 L334 354 Z" fill="#585D5B"/>
+    <rect x="140" y="362" width="46" height="106" rx="3" fill="#8B918F"/>
+    <rect x="196" y="368" width="38" height="100" rx="3" fill="#8B918F"/>
+    <rect x="368" y="368" width="56" height="100" rx="3" fill="#848A88"/>
+    <!-- 대나무 줄기 -->
+    <g stroke="#5E9B3F" stroke-width="3" stroke-linecap="round">
+      <path d="M226 470 V344"/><path d="M238 470 V322"/><path d="M250 470 V352"/>
+      <path d="M262 470 V312"/><path d="M274 470 V346"/><path d="M286 470 V330"/>
+      <path d="M352 470 V348"/><path d="M364 470 V324"/><path d="M376 470 V354"/>
+      <path d="M388 470 V318"/><path d="M400 470 V342"/>
+    </g>
+    <!-- 대나무 잎 -->
+    <g>
+      <ellipse cx="252" cy="334" rx="46" ry="25" fill="#6FB84C"/>
+      <ellipse cx="226" cy="356" rx="31" ry="19" fill="#80C95D"/>
+      <ellipse cx="284" cy="352" rx="29" ry="18" fill="#5FA542"/>
+      <ellipse cx="262" cy="314" rx="27" ry="15" fill="#8AD066"/>
+      <ellipse cx="244" cy="386" rx="24" ry="13" fill="#6FB84C"/>
+      <ellipse cx="376" cy="342" rx="42" ry="23" fill="#6FB84C"/>
+      <ellipse cx="352" cy="362" rx="27" ry="16" fill="#80C95D"/>
+      <ellipse cx="404" cy="356" rx="25" ry="15" fill="#5FA542"/>
+      <ellipse cx="386" cy="320" rx="24" ry="14" fill="#8AD066"/>
+      <ellipse cx="368" cy="390" rx="22" ry="12" fill="#6FB84C"/>
+    </g>
+    <g stroke="#4E8C36" stroke-width="2.4" stroke-linecap="round" opacity=".8">
+      <path d="M212 342 l-16 -8M300 344 l16 -9M336 350 l-16 -8M420 348 l16 -9"/>
+    </g>
+    <!-- 흰 자갈 마당 · 돌 -->
+    <rect x="108" y="466" width="324" height="104" fill="#DCD9D2"/>
+    <ellipse cx="176" cy="500" rx="26" ry="14" fill="#A9A49B"/>
+    <ellipse cx="250" cy="512" rx="20" ry="11" fill="#B6B1A8"/>
+    <ellipse cx="330" cy="498" rx="24" ry="13" fill="#A29D94"/>
+    <ellipse cx="398" cy="516" rx="18" ry="10" fill="#BDB8AF"/>
+    <rect x="120" y="536" width="130" height="34" rx="4" fill="#EDEBE6"/>
+    <rect x="286" y="536" width="130" height="34" rx="4" fill="#EDEBE6"/>
+  </g>
+  <rect x="132" y="278" width="94" height="40" rx="20" fill="#1F2430"/>
+  <text x="179" y="305" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#ffffff">플랜 B</text>
+  <text x="140" y="360" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#ffffff">소제동 코스</text>
+
+  <!-- 인디케이터 -->
+  <circle cx="250" cy="600" r="5.5" fill="#D4D8E0"/>
+  <circle cx="270" cy="600" r="5.5" fill="#7FD8C0"/>
+  <circle cx="290" cy="600" r="5.5" fill="#D4D8E0"/>
+
+  <!-- ===== 추천 다시받기 ===== -->
+  <rect x="30" y="630" width="480" height="54" rx="27" fill="#ffffff" stroke="#E2E8F4" stroke-width="1.8"/>
+  <g transform="translate(178,646)" fill="none" stroke="#4B5261" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 9 a10 10 0 0 1 17 -7"/><path d="M20 9 a10 10 0 0 1 -17 7"/>
+    <path d="M19 -3 v5 h-5"/><path d="M2 15 v-5 h5"/>
+  </g>
+  <text x="290" y="665" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="700" fill="#21262F">추천 다시받기 (0/3)</text>
+
+  <!-- ===== 날짜 ===== -->
+  <text x="58" y="722" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#4B5261">일</text>
+  <text x="138" y="722" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#A9B0BE">월</text>
+  <text x="218" y="722" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" font-weight="600" fill="#A9B0BE">화</text>
+  <circle cx="58" cy="768" r="28" fill="#9EE0CD"/>
+  <text x="58" y="776" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="800" fill="#1B4F42">16</text>
+  <text x="138" y="776" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="600" fill="#A9B0BE">17</text>
+  <text x="218" y="776" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="600" fill="#A9B0BE">18</text>
+
+  <path d="M28 818 H512" stroke="#ECEFF5" stroke-width="1.8"/>
+
+  <!-- ===== 플랜 B 일정 요약 ===== -->
+  <text x="28" y="864" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="22" font-weight="800" fill="#21262F">플랜 B 일정 요약</text>
+
+  <g fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(98,894)" stroke="#5E84F4">
+      <rect x="0" y="4" width="24" height="18" rx="4"/><path d="M8 4V0h8v4M4 22v4M20 22v4"/>
+    </g>
+    <g transform="translate(258,894)" stroke="#2AA98A">
+      <circle cx="12" cy="13" r="12"/><path d="M12 6v7l5 3"/>
+    </g>
+    <g transform="translate(418,894)" stroke="#7B8394">
+      <path d="M2 26V8l10-6 10 6v18"/><path d="M9 26v-8h6v8"/>
+    </g>
+  </g>
+  <text x="110" y="954" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#21262F">2시간 47분</text>
+  <text x="270" y="954" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#21262F">7개</text>
+  <text x="430" y="954" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#21262F">도시</text>
+
+  <!-- ===== 이 여행 담기 ===== -->
+  <rect x="30" y="978" width="480" height="72" rx="16" fill="#6C8BF5"/>
+  <text x="270" y="1024" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="23" font-weight="700" fill="#ffffff">이 여행 담기</text>
+
+  <!-- ===== 하단 탭바 ===== -->
+  <rect x="0" y="1060" width="540" height="110" fill="#ffffff"/>
+  <path d="M0 1060h540" stroke="#EDF0F6" stroke-width="2"/>
+  <g fill="none" stroke="#A9B0BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 1108 l12-11 12 11 v14 a2 2 0 0 1-2 2h-20a2 2 0 0 1-2-2z"/>
+    <rect x="150" y="1094" width="24" height="22" rx="5"/><path d="M158 1100l8 5-8 5z"/>
+    <rect x="258" y="1094" width="24" height="22" rx="4"/><path d="M265 1091v5M275 1091v5M258 1102h24"/>
+    <path d="M386 1102a8 8 0 0 0-16 0c0 9-4 12-4 12h24s-4-3-4-12"/><path d="M380 1118a3 3 0 0 1-4 0"/>
+    <circle cx="486" cy="1099" r="7"/><path d="M474 1119c2-7 6-9 12-9s10 2 12 9"/>
+  </g>
+</svg>
