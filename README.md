@@ -65,10 +65,15 @@ python -m http.server 5173
 > 로고 텍스트 "트레일러"는 이미지가 아닌 텍스트로 렌더링됩니다.
 > 워드마크 이미지로 바꾸려면 각 페이지의 `.logo__text` 를 `<img>` 로 교체하세요.
 
-### 2. 도메인
-`https://trailer.example.com` 을 실제 도메인으로 일괄 치환합니다.
-- 각 HTML 의 `<link rel="canonical">`, `og:url`, `og:image`
+### 2. 도메인 — 반영 완료
+현재 도메인: **`https://trailer-sage.vercel.app`** (Vercel 프로덕션)
+
+커스텀 도메인을 붙이면 아래 위치를 일괄 치환하세요. (총 32곳)
+- 각 HTML 의 `<link rel="canonical">`, `og:url`, `og:image`, `twitter:image`
 - `robots.txt`, `sitemap.xml`
+
+> Vercel 의 배포별 URL(`trailer-xxxxx-....vercel.app`)은 배포마다 바뀌므로 절대 쓰지 마세요.
+> 항상 최신 배포를 가리키는 프로덕션 도메인만 사용합니다.
 
 ### 3. Google Play 스토어 URL
 `https://play.google.com/store/apps/details?id=com.trailer.app` 의 패키지명을 실제 값으로 변경합니다.

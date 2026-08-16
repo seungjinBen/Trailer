@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- [교체 위치] 도메인(https://trailer.example.com)을 실제 배포 도메인으로 일괄 변경하세요. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://trailer.example.com/</loc>
+    <loc>https://trailer-sage.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://trailer.example.com/features/</loc>
+    <loc>https://trailer-sage.vercel.app/features/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trailer.example.com/privacy/</loc>
+    <loc>https://trailer-sage.vercel.app/privacy/</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trailer.example.com/terms/</loc>
+    <loc>https://trailer-sage.vercel.app/terms/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trailer.example.com/location-terms/</loc>
+    <loc>https://trailer-sage.vercel.app/location-terms/</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trailer.example.com/delete-account/</loc>
+    <loc>https://trailer-sage.vercel.app/delete-account/</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
